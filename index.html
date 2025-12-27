@@ -1,52 +1,83 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clash Of Centranif</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clash Of Centranif | XI-2</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Logo -->
-  <img class="logo" src="https://files.catbox.moe/qjflu2.jpg" alt="Logo Centranif">
+    <div class="glow-bg"></div>
+    <div class="particles" id="particles"></div>
 
-  <!-- Judul -->
-  <h1>Clash Of Centranif</h1>
-  <p class="intro">
-    Clash Of Centranif. Kelas IPA XI-2 di SMAN 1 SEKARAN. Anak-anaknya ramah, baik, sayang guru, solid, taat orang tua, rajin ibadah, dan tidak sombong.<br>
-    Ini website sederhana kami. Selamat membaca! 📖
-  </p>
+    <main class="container">
+        <section class="hero fade-in">
+            <img src="https://files.catbox.moe/qjflu2.jpg" alt="Logo Centranif" class="main-logo">
+            <h1 class="title-text">Clash Of Centranif</h1>
+            <p class="intro-text">
+                Kelas IPA XI-2 di SMAN 1 SEKARAN. Anak-anaknya ramah, baik, sayang guru, solid, taat orang tua, rajin ibadah, dan tidak sombong. 
+                <br><br>Ini website sederhana kami. Selamat membaca! 📖
+            </p>
+        </section>
 
-  <!-- Struktur Organisasi -->
-  <div class="card-container">
-    <div class="card fade-in">
-      <img src="https://files.catbox.moe/wu4n51.jpeg" alt="Wali Kelas">
-      <h3>Wali Kelas</h3>
-    </div>
-    <div class="card fade-in">
-      <img src="https://files.catbox.moe/siwln9.jpeg" alt="Ketua">
-      <h3>Ketua</h3>
-    </div>
-    <div class="card fade-in">
-      <img src="https://files.catbox.moe/1wnl2k.jpeg" alt="Sekretaris">
-      <h3>Sekretaris</h3>
-    </div>
-    <div class="card fade-in">
-      <img src="https://files.catbox.moe/wxedyn.jpeg" alt="Bendahara">
-      <h3>Bendahara</h3>
-    </div>
-  </div>
+        <nav class="quick-menu slide-up">
+            <a href="#struktur">Organisasi</a>
+            <a href="#galeri">Galeri</a>
+            <a href="#jadwal">Jadwal</a>
+        </nav>
 
-  <!-- Navigasi bawah -->
-  <footer>
-    <a href="#">Struktur Lengkap</a> |
-    <a href="hubungi.html">Pelajari Selengkapnya</a> |
-    <a href="hubungi.html">Bantuan</a> |
-    <a href="hubungi.html">Hubungi Kami</a> |
-    Supported by <a href="https://www.cloudflare.com/">Cloudflare</a> & <a href="https://github.com/">GitHub</a> |
-    <a href="https://github.com/manzz671">Tentang Developer</a>
-  </footer>
+        <section id="struktur" class="section-card slide-up">
+            <h2 class="section-title">The Guardians</h2>
+            <div class="org-grid">
+                <div class="person-card">
+                    <img src="https://files.catbox.moe/wu4n51.jpeg" alt="Wali Kelas">
+                    <h3>Wali Kelas</h3>
+                    <p>Pembimbing Utama</p>
+                </div>
+                <div class="person-card">
+                    <img src="https://files.catbox.moe/siwln9.jpeg" alt="Ketua">
+                    <h3>Ketua Kelas</h3>
+                    <p>Leader</p>
+                </div>
+                <div class="person-card">
+                    <img src="https://files.catbox.moe/1wnl2k.jpeg" alt="Sekretaris">
+                    <h3>Sekretaris</h3>
+                    <p>Administration</p>
+                </div>
+                <div class="person-card">
+                    <img src="https://files.catbox.moe/wxedyn.jpeg" alt="Bendahara">
+                    <h3>Bendahara</h3>
+                    <p>Finance</p>
+                </div>
+            </div>
+        </section>
 
-  <script src="script.js"></script>
+        <section id="galeri" class="section-card slide-up">
+            <h2 class="section-title">Moment Kita</h2>
+            <div class="slider-container">
+                <div class="slider">
+                    <img src="https://via.placeholder.com/600x400/222/ff2d95?text=Foto+1" alt="Galeri 1">
+                    <img src="https://via.placeholder.com/600x400/222/ff2d95?text=Foto+2" alt="Galeri 2">
+                    <img src="https://via.placeholder.com/600x400/222/ff2d95?text=Foto+3" alt="Galeri 3">
+                    <img src="https://via.placeholder.com/600x400/222/ff2d95?text=Foto+4" alt="Galeri 4">
+                    <img src="https://via.placeholder.com/600x400/222/ff2d95?text=Foto+5" alt="Galeri 5">
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-links">
+                <a href="#">Struktur Lengkap</a>
+                <a href="hubungi.html">Pelajari Selengkapnya →</a>
+                <a href="hubungi.html">Bantuan</a>
+                <a href="hubungi.html">Hubungi Kami</a>
+                <a href="https://github.com/manzz671" target="_blank">Tentang Developer</a>
+            </div>
+            <p class="copyright">Supported by Cloudflare & GitHub</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
