@@ -3,34 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connect | Centranif</title>
+    <title>Contact Us | Centranif</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="contact-body">
     <div class="ocean-bg"></div>
-    <div class="contact-page">
-        <div class="form-card reveal">
-            <h2 class="title-text" style="font-size: 2rem;">Say Hello! 👋</h2>
-            <p style="color: #888; margin-bottom: 30px;">Punya pesan rahasia untuk anak-anak XI-2?</p>
-            
-            <div class="input-group">
-                <input type="text" id="nama" required>
-                <label>Nama Anda</label>
+    <main class="contact-container reveal">
+        <div class="contact-glass">
+            <div class="contact-header">
+                <h2>Direct Message</h2>
+                <p>Kami akan merespons pesanmu secepat kilat ⚡</p>
             </div>
             
-            <div class="input-group">
-                <textarea id="pesan" rows="4" required></textarea>
-                <label>Pesan Anda</label>
+            <div class="form-wrapper">
+                <div class="input-field">
+                    <input type="text" id="nama" placeholder=" " required>
+                    <label>Nama Lengkap</label>
+                </div>
+                <div class="input-field">
+                    <textarea id="pesan" rows="4" placeholder=" " required></textarea>
+                    <label>Pesan Anda</label>
+                </div>
             </div>
 
-            <div class="btn-container">
-                <button onclick="sendWA()" class="btn-action wa">WhatsApp</button>
-                <button onclick="sendEmail()" class="btn-action mail">E-mail</button>
+            <div class="button-row">
+                <button onclick="sendWA()" class="btn-neon-wa">WhatsApp</button>
+                <button onclick="sendEmail()" class="btn-neon-mail">E-Mail</button>
             </div>
-
-            <a href="index.html" class="back-link">← Kembali ke Beranda</a>
+            
+            <a href="index.html" class="back-btn">← Back to Beranda</a>
         </div>
-    </div>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
