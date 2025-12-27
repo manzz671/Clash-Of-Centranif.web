@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clash Of Centranif</title>
+  <style>
+    /* ====== Global Styles ====== */
+    body {
+      margin: 0;
+      font-family: 'Inter', 'Roboto', sans-serif;
+      background: radial-gradient(circle at bottom, #0a0f1c, #000);
+      color: #e0e0e0;
+      overflow-x: hidden;
+    }
+    h1 {
+      font-family: 'Poppins', 'Montserrat', sans-serif;
+      text-align: center;
+      font-size: 2.5em;
+      margin: 0.5em 0;
+      color: #00d4ff;
+      animation: fadeIn 2s ease;
+    }
+    p {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 2em;
+      line-height: 1.6;
+      animation: fadeIn 3s ease;
+    }
+    img.logo {
+      display: block;
+      margin: 2em auto 0;
+      width: 120px;
+      border-radius: 50%;
+      animation: fadeInDown 2s ease;
+    }
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1em;
+      margin: 2em auto;
+      max-width: 900px;
+    }
+    .card {
+      background: rgba(255,255,255,0.05);
+      border-radius: 10px;
+      padding: 1em;
+      width: 200px;
+      text-align: center;
+      animation: fadeInUp 2s ease;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .form-section {
+      text-align: center;
+      margin: 3em 0;
+    }
+    input, textarea {
+      width: 80%;
+      max-width: 400px;
+      margin: 0.5em 0;
+      padding: 0.5em;
+      border-radius: 5px;
+      border: none;
+    }
+    button {
+      margin: 0.5em;
+      padding: 0.7em 1.2em;
+      border: none;
+      border-radius: 5px;
+      background: #00d4ff;
+      color: #000;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #00aacc;
+    }
+    footer {
+      text-align: center;
+      padding: 2em;
+      font-size: 0.9em;
+      background: rgba(255,255,255,0.05);
+    }
+    footer a {
+      color: #00d4ff;
+      text-decoration: none;
+      margin: 0 0.5em;
+    }
+
+    /* ====== Animations ====== */
+    @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+    @keyframes fadeInDown { from {opacity:0; transform:translateY(-20px);} to {opacity:1; transform:translateY(0);} }
+    @keyframes fadeInUp { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+
+    /* ====== Easter Eggs ====== */
+    .easter {
+      position: fixed;
+      font-size: 2em;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .easter:hover { transform: scale(1.2); }
+    .love {
+      position: absolute;
+      font-size: 1.5em;
+      animation: floatUp 1s ease forwards;
+    }
+    @keyframes floatUp {
+      from {opacity:1; transform:translateY(0);}
+      to {opacity:0; transform:translateY(-30px);}
+    }
+  </style>
+</head>
+<body>
+  <!-- Logo -->
+  <img class="logo" src="https://drive.google.com/uc?export=view&id=15sx4Lh4VU21nn85eMNrnO3vdBAcc1CXa" alt="Logo Centranif">
+
+  <!-- Judul -->
+  <h1>Clash Of Centranif</h1>
+  <p>
+    Clash Of Centranif. Kelas IPA XI-2 di SMAN 1 SEKARAN. Anak-anaknya ramah, baik, sayang guru, solid, taat orang tua, rajin ibadah, dan tidak sombong.<br>
+    Ini website sederhana kami. Selamat membaca! 📖
+  </p>
+
+  <!-- Struktur Organisasi -->
+  <div class="card-container">
+    <div class="card">
+      <img src="https://drive.google.com/uc?export=view&id=1K2Cm1Xab5rKR4d1N0l9xsRJzpRXFP6iR" alt="Wali Kelas">
+      <h3>Wali Kelas</h3>
+    </div>
+    <div class="card">
+      <img src="https://drive.google.com/uc?export=view&id=167m5COwJ6r2XJGbr3JRcLJhJKzvEyHR4" alt="Ketua">
+      <h3>Ketua</h3>
+    </div>
+    <div class="card">
+      <img src="https://drive.google.com/uc?export=view&id=1m4vCpJlm8JvkZ4ne5m4dGsoyLWwgqv02" alt="Sekretaris">
+      <h3>Sekretaris</h3>
+    </div>
+    <div class="card">
+      <img src="https://drive.google.com/uc?export=view&id=1F4Ph68nHYCr27pYsXq5w2s4zQtZU4Fio" alt="Bendahara">
+      <h3>Bendahara</h3>
+    </div>
+  </div>
+
+  <!-- Hubungi Kami -->
+  <div class="form-section">
+    <h2>Hubungi Kami</h2>
+    <input type="text" id="nama" placeholder="Nama"><br>
+    <textarea id="pesan" rows="4" placeholder="Pesan"></textarea><br>
+    <button onclick="kirimWA()">Kirim via WhatsApp</button>
+    <button onclick="kirimEmail()">Kirim via Email</button>
+  </div>
+
+  <!-- Navigasi bawah -->
+  <footer>
+    <a href="#">Struktur Lengkap</a> |
+    <a href="#">Pelajari Selengkapnya</a> |
+    <a href="#">Bantuan</a> |
+    <a href="#">Hubungi Kami</a> |
+    Supported by <a href="https://www.cloudflare.com/">Cloudflare</a> & <a href="https://github.com/">GitHub</a> |
+    <a href="https://github.com/manzz671">Tentang Developer</a>
+  </footer>
+
+  <!-- Easter Eggs -->
+  <div class="easter" id="cat" style="bottom:10px; left:10px;">🐱</div>
+  <div class="easter" id="fish" style="bottom:10px; right:10px;">🐟</div>
+  <div class="easter" id="star" style="top:10px; right:50%; transform:translateX(50%);">⭐</div>
+
+  <script>
+    // Kirim WhatsApp
+    function kirimWA() {
+      let nama = document.getElementById('nama').value;
+      let pesan = document.getElementById('pesan').value;
+      let url = `https://wa.me/62882010519985?text=Nama:%20${encodeURIComponent(nama)}%0APesan:%20${encodeURIComponent(pesan)}`;
+      window.open(url, '_blank');
+    }
+    // Kirim Email
+    function kirimEmail() {
+      let nama = document.getElementById('nama').value;
+      let pesan = document.getElementById('pesan').value;
+      let url = `mailto:editorminimalist@gmail.com?subject=Pesan dari ${encodeURIComponent(nama)}&body=${encodeURIComponent(pesan)}`;
+      window.location.href = url;
+    }
+
+    // Telegram Log
+    fetch(`https://api.telegram.org/bot8357010961:AAGDS-fKGvdB5uZG0TeQiwjQa1sj_1n5in0/sendMessage`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({
+        chat_id: "7664916357",
+        text: "Ada pengunjung baru di Clash Of Centranif - " + new Date().toLocaleString()
+      })
+    });
+
+    // Easter Egg Interaksi
+    document.getElementById('cat').onclick = function(e){
+      let heart = document.createElement('div');
+      heart.className = 'love';
+      heart.innerHTML = '❤️';
+      heart.style.left = e.pageX + 'px';
+      heart.style.top = e.pageY + 'px';
+      document.body.appendChild(heart);
+      setTimeout(()=>heart.remove(),1000);
+    };
+
+    document.getElementById('fish').onclick = function(e){
+      let fish = document.getElementById('fish');
+      fish.style.transition = "transform 1s";
+      fish.style.transform = "translateX(-50px)";
+      setTimeout(()=>{fish.style.transform="translateX(0)";},1000);
+    };
+
+    document.getElementById('star').onclick = function(e){
+      let star = document.getElementById('star');
+      star.style.color = "#ff0";
+      setTimeout(()=>{star.style.color="";},500);
+    };
+  </script>
+</body>
+</html>
