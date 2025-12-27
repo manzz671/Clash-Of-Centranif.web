@@ -3,28 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hubungi Kami | Centranif</title>
+    <title>Connect | Centranif</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="glow-bg"></div>
-    <div class="container fade-in">
-        <section class="section-card contact-box">
-            <h2 class="section-title">Kirim Pesan</h2>
-            <div class="form-group">
+    <div class="ocean-bg"></div>
+    <div class="contact-page">
+        <div class="form-card reveal">
+            <h2 class="title-text" style="font-size: 2rem;">Say Hello! 👋</h2>
+            <p style="color: #888; margin-bottom: 30px;">Punya pesan rahasia untuk anak-anak XI-2?</p>
+            
+            <div class="input-group">
+                <input type="text" id="nama" required>
                 <label>Nama Anda</label>
-                <input type="text" id="nama" placeholder="Masukkan nama...">
             </div>
-            <div class="form-group">
-                <label>Pesan</label>
-                <textarea id="pesan" rows="4" placeholder="Tulis sesuatu..."></textarea>
+            
+            <div class="input-group">
+                <textarea id="pesan" rows="4" required></textarea>
+                <label>Pesan Anda</label>
             </div>
-            <div class="btn-group">
-                <button onclick="sendWA()" class="btn btn-wa">Kirim via WhatsApp</button>
-                <button onclick="sendEmail()" class="btn btn-mail">Kirim via Email</button>
+
+            <div class="btn-container">
+                <button onclick="sendWA()" class="btn-action wa">WhatsApp</button>
+                <button onclick="sendEmail()" class="btn-action mail">E-mail</button>
             </div>
+
             <a href="index.html" class="back-link">← Kembali ke Beranda</a>
-        </section>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
