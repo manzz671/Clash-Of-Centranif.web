@@ -1,17 +1,44 @@
 :root {
-    --black: #050505;
-    --pink: #ff2d95;
-    --glass: rgba(255, 255, 255, 0.05);
+  --black: #050505;
+  --pink: #ff2d95;
+  --glass: rgba(255, 255, 255, 0.05);
 }
 
+/* Reset */
 * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
 body { background: var(--black); color: white; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
 
-.ocean-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% -20%, #200512, #050505); z-index: -2; }
+/* Background Dinamis */
+.ocean-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(270deg, #050505, #200512, #0a0a2a);
+  background-size: 600% 600%;
+  animation: gradientShift 20s ease infinite;
+  z-index: -2;
+}
+@keyframes gradientShift {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
+}
+.ocean-bg::after {
+  content: "";
+  position: absolute;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle, rgba(255,45,149,0.2) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: twinkle 6s linear infinite;
+}
+@keyframes twinkle {
+  0%,100% {opacity:0.3;}
+  50% {opacity:0.7;}
+}
 
 /* Dynamic Spacing */
 .main-wrapper { padding: 40px 0; }
-section { margin-bottom: 120px; padding: 0 20px; } /* Renggang yang cukup */
+section { margin-bottom: 120px; padding: 0 20px; }
 
 /* Reveal Animation */
 .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s ease-out; }
@@ -19,8 +46,21 @@ section { margin-bottom: 120px; padding: 0 20px; } /* Renggang yang cukup */
 
 /* Hero */
 .hero-section { text-align: center; margin-top: 40px; }
-.brand-logo { width: 180px; border-radius: 40px; border: 2px solid var(--pink); box-shadow: 0 0 30px rgba(255,45,149,0.3); }
-.glitch-text { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin: 20px 0; color: var(--pink); text-shadow: 0 0 10px rgba(255,45,149,0.5); }
+.brand-logo {
+  max-width: 50%;
+  height: auto;
+  border-radius: 40px;
+  border: 2px solid var(--pink);
+  box-shadow: 0 0 40px rgba(255,45,149,0.5);
+  animation: fadeInDown 2s ease;
+}
+.glitch-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  margin: 20px 0;
+  color: var(--pink);
+  text-shadow: 0 0 10px rgba(255,45,149,0.5);
+}
 .hero-desc { font-weight: 800; letter-spacing: 2px; color: #888; }
 
 /* Achievement Horizontal */
@@ -30,13 +70,29 @@ section { margin-bottom: 120px; padding: 0 20px; } /* Renggang yang cukup */
 
 /* Organization */
 .org-flex { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-.member-card { text-align: center; width: 140px; }
-.circle-frame { width: 100px; height: 100px; margin: 0 auto 15px; border-radius: 50%; padding: 4px; background: linear-gradient(var(--pink), transparent); }
-.circle-frame img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+.member-card { text-align: center; width: 160px; }
+.circle-frame {
+  width: 140px; height: 140px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, var(--pink), transparent);
+  box-shadow: 0 0 25px rgba(255,45,149,0.4);
+}
+.circle-frame img {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
 
-/* INFINITE GALLERY */
+/* Infinite Gallery */
 .loop-viewport { position: relative; width: 100%; overflow: hidden; padding: 40px 0; }
-.loop-track { display: flex; gap: 20px; transition: transform 0.1s ease; cursor: grab; }
+.loop-track { display: flex; gap: 20px; animation: scrollLoop 40s linear infinite; }
+@keyframes scrollLoop {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(-50%);}
+}
 .gallery-item { flex: 0 0 280px; height: 380px; border-radius: 25px; overflow: hidden; transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1); filter: brightness(0.6); }
 .gallery-item.active { transform: scale(1.15); filter: brightness(1.2); box-shadow: 0 20px 50px rgba(255,45,149,0.4); border: 2px solid var(--pink); z-index: 10; }
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
@@ -44,16 +100,84 @@ section { margin-bottom: 120px; padding: 0 20px; } /* Renggang yang cukup */
 /* Buttons */
 .btn-premium { background: var(--pink); color: white; padding: 16px 35px; border-radius: 15px; text-decoration: none; font-weight: 800; display: inline-block; transition: 0.3s; }
 .btn-premium:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(255,45,149,0.5); }
+.btn-outline { background: transparent; border: 2px solid var(--pink); color: var(--pink); padding: 14px 30px; border-radius: 15px; text-decoration: none; font-weight: 700; transition: 0.3s; }
+.btn-outline:hover { background: var(--pink); color: #fff; }
 
-/* CONTACT PAGE */
+/* Footer */
+.main-footer {
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding: 1.5em;
+  text-align: center;
+  font-size: 0.9em;
+  color: #aaa;
+}
+.main-footer a {
+  color: #00d4ff;
+  transition: color 0.3s;
+}
+.main-footer a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #00d4ff;
+}
+
+/* Contact Page */
 .contact-container { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
-.contact-glass { background: rgba(10,10,10,0.8); border: 1px solid var(--pink); border-radius: 35px; padding: 40px; width: 100%; max-width: 500px; backdrop-filter: blur(20px); }
+.contact-glass {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,45,149,0.4);
+  border-radius: 25px;
+  padding: 40px;
+  width: 100%; max-width: 500px;
+  box-shadow: 0 0 30px rgba(255,45,149,0.3);
+  animation: fadeInUp 1.5s ease;
+}
+@keyframes fadeInUp {
+  from {opacity:0; transform:translateY(30px);}
+  to {opacity:1; transform:translateY(0);}
+}
 .input-field { position: relative; margin-bottom: 25px; }
-.input-field input, .input-field textarea { width: 100%; background: none; border: none; border-bottom: 2px solid #333; color: white; padding: 10px 0; font-size: 1rem; outline: none; transition: 0.3s; }
-.input-field label { position: absolute; left: 0; top: 10px; color: #555; pointer-events: none; transition: 0.3s; }
+.input-field input, .input-field textarea {
+  width: 100%; background: none; border: none;
+  border-bottom: 2px solid #333; color: white;
+  padding: 10px 0; font-size: 1rem; outline: none;
+  transition: 0.3s;
+}
+.input-field label {
+  position: absolute; left: 0; top: 10px;
+  color: #555; pointer-events: none; transition: 0.3s;
+}
 .input-field input:focus ~ label, .input-field input:not(:placeholder-shown) ~ label,
-.input-field textarea:focus ~ label, .input-field textarea:not(:placeholder-shown) ~ label { top: -15px; font-size: 0.8rem; color: var(--pink); }
+.input-field textarea:focus ~ label, .input-field textarea:not(:placeholder-shown) ~ label {
+  top: -15px; font-size: 0.8rem; color: var(--pink);
+}
 .input-field input:focus { border-bottom-color: var(--pink); }
 
-.btn-neon-wa { width: 100%; background: #25d366; color: white; border: none; padding: 15px; border-radius: 15px; font-weight: bold; margin-bottom: 10px; cursor: pointer; }
-.btn-neon-mail { width: 100%; background: transparent; border: 2px solid white; color: white; padding: 13px; border-radius: 15px; font-weight: bold; cursor: pointer; }
+/* Neon Buttons */
+.btn-neon-wa, .btn-neon-mail { transition: 0.3s; }
+.btn-neon-wa {
+  width: 100%; background: #25d366; color: white;
+  border: none; padding: 15px; border-radius: 15px;
+  font-weight: bold; margin-bottom: 10px; cursor: pointer;
+  box-shadow: 0 0 15px rgba(37,211,102,0.7);
+}
+.btn-neon-wa:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(37,211,102,0.9);
+}
+.btn-neon-mail {
+  width: 100%;
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 13px;
+  border-radius: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255,255,255,0.4);
+}
+.btn-neon-mail:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.1);
+    }
