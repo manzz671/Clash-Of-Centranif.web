@@ -2,132 +2,89 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clash Of Centranif | XI-2 Official</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Clash Of Centranif | XI-2</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;600;800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="ocean-bg"></div>
-    <div class="particles" id="particles"></div>
 
     <main class="container">
         <header class="hero reveal">
-            <div class="logo-wrapper">
-                <img src="https://files.catbox.moe/qjflu2.jpg" alt="Logo Centranif" class="main-logo">
-            </div>
+            <img src="https://files.catbox.moe/qjflu2.jpg" alt="Logo Centranif" class="main-logo">
             <h1 class="title-text">Clash Of Centranif</h1>
             <p class="intro-text">
-                Bukan sekadar kelas, melainkan sebuah ekosistem di SMAN 1 SEKARAN. 
-                Tempat di mana kecerdasan IPA berpadu dengan solidaritas tanpa batas. 
-                Santun kepada guru, taat pada agama, dan berprestasi dalam karya.
+                IPA XI-2 SMAN 1 SEKARAN. Komunitas pelajar yang ramah, solid, dan berprestasi.
             </p>
         </header>
 
         <nav class="quick-nav reveal">
-            <a href="#struktur" class="nav-btn">Guardians</a>
-            <a href="#prestasi" class="nav-btn">Milestones</a>
-            <a href="#galeri" class="nav-btn">Gallery</a>
-            <a href="hubungi.html" class="nav-btn primary">Connect →</a>
+            <a href="#struktur" class="nav-btn">Struktur</a>
+            <a href="#galeri" class="nav-btn">Galeri</a>
+            <a href="hubungi.html" class="nav-btn primary">Hubungi</a>
         </nav>
 
         <section id="struktur" class="section-container">
             <h2 class="section-title reveal">The Guardians</h2>
             <div class="org-grid">
                 <div class="glass-card reveal">
-                    <div class="img-frame"><img src="https://files.catbox.moe/wu4n51.jpeg"></div>
+                    <img src="https://files.catbox.moe/wu4n51.jpeg" class="member-img">
                     <h3>Wali Kelas</h3>
-                    <span>Visionary Guide</span>
                 </div>
                 <div class="glass-card reveal">
-                    <div class="img-frame"><img src="https://files.catbox.moe/siwln9.jpeg"></div>
+                    <img src="https://files.catbox.moe/siwln9.jpeg" class="member-img">
                     <h3>Ketua Kelas</h3>
-                    <span>Lead Strategist</span>
                 </div>
                 <div class="glass-card reveal">
-                    <div class="img-frame"><img src="https://files.catbox.moe/1wnl2k.jpeg"></div>
+                    <img src="https://files.catbox.moe/1wnl2k.jpeg" class="member-img">
                     <h3>Sekretaris</h3>
-                    <span>Data Archivist</span>
                 </div>
                 <div class="glass-card reveal">
-                    <div class="img-frame"><img src="https://files.catbox.moe/wxedyn.jpeg"></div>
+                    <img src="https://files.catbox.moe/wxedyn.jpeg" class="member-img">
                     <h3>Bendahara</h3>
-                    <span>Finance Manager</span>
                 </div>
             </div>
         </section>
 
         <section id="galeri" class="section-container">
             <h2 class="section-title reveal">Visual Journey</h2>
-            <div class="carousel-container reveal">
-                <div class="carousel-track" id="carouselTrack">
+            <div class="carousel-viewport reveal" id="viewport">
+                <div class="carousel-track" id="track">
                     <div class="carousel-item"><img src="https://files.catbox.moe/ntg9bh.jpg"></div>
                     <div class="carousel-item"><img src="https://files.catbox.moe/r62wyt.jpg"></div>
-                    <div class="carousel-item"><img src="https://files.catbox.moe/z7gvj3.jpg"></div>
+                    <div class="carousel-item active"><img src="https://files.catbox.moe/z7gvj3.jpg"></div>
                     <div class="carousel-item"><img src="https://files.catbox.moe/iu8ald.jpg"></div>
                     <div class="carousel-item"><img src="https://files.catbox.moe/rsz01y.jpg"></div>
                 </div>
             </div>
-            <p class="hint reveal">Membentuk lingkaran tanpa akhir</p>
-        </section>
-
-        <section id="prestasi" class="section-container">
-            <h2 class="section-title reveal">Our Milestones</h2>
-            <div class="milestone-list">
-                <div class="milestone-item reveal">
-                    <div class="m-icon">🏆</div>
-                    <div class="m-text">
-                        <h4>Juara Umum Akademik</h4>
-                        <p>Konsistensi nilai rata-rata kelas tertinggi di semester ganjil.</p>
-                    </div>
-                </div>
-                <div class="milestone-item reveal">
-                    <div class="m-icon">🎭</div>
-                    <div class="m-text">
-                        <h4>Best Performance Class</h4>
-                        <p>Penampilan seni paling memukau pada Dies Natalis sekolah.</p>
-                    </div>
-                </div>
-                <div class="milestone-item reveal">
-                    <div class="m-icon">⚽</div>
-                    <div class="m-text">
-                        <h4>Solidarity Cup Winner</h4>
-                        <p>Kemenangan telak dalam kompetisi olahraga antar kelas.</p>
-                    </div>
-                </div>
-                <div class="milestone-item reveal">
-                    <div class="m-icon">💎</div>
-                    <div class="m-text">
-                        <h4>The Most Disciplined Class</h4>
-                        <p>Penghargaan atas kedisiplinan dan kebersihan lingkungan kelas.</p>
-                    </div>
-                </div>
-            </div>
+            <p class="hint">← Geser ke kanan/kiri →</p>
         </section>
 
         <section class="section-container">
-            <div class="atmosphere-box reveal">
-                <div class="atmo-content">
-                    <h2 class="section-title">Class Atmosphere</h2>
-                    <p>Lingkungan belajar kami dirancang dengan harmoni. Setiap sudut ruangan menyimpan cerita, setiap diskusi melahirkan inspirasi. Centranif bukan sekadar tempat belajar, tapi rumah kedua bagi kami.</p>
-                    <button class="nav-btn primary" onclick="location.href='hubungi.html'">Ketahui Lebih Lanjut</button>
+            <h2 class="section-title reveal">Achievements</h2>
+            <div class="milestone-grid">
+                <div class="m-card reveal">
+                    <span class="m-icon">♟️</span>
+                    <h4>Juara 2 Catur</h4>
                 </div>
-                <div class="atmo-img">
-                    <img src="https://files.catbox.moe/z7gvj3.jpg" alt="Vibe Kelas">
+                <div class="m-card reveal">
+                    <span class="m-icon">🏐</span>
+                    <h4>Juara 3 Volley Putri</h4>
+                </div>
+                <div class="m-card reveal">
+                    <span class="m-icon">⭐</span>
+                    <h4>Kelas Unggulan</h4>
                 </div>
             </div>
         </section>
 
-        <footer class="footer-glass">
-            <div class="footer-grid reveal">
-                <button onclick="location.href='hubungi.html'" class="f-btn-neon">Bantuan</button>
-                <button onclick="location.href='hubungi.html'" class="f-btn-neon">Hubungi Kami</button>
-                <button onclick="window.open('https://github.com/manzz671')" class="f-btn-neon highlight">Dev by Manzz671</button>
+        <footer class="footer">
+            <div class="footer-btns reveal">
+                <button onclick="location.href='hubungi.html'" class="btn-neon">Bantuan</button>
+                <button onclick="window.open('https://github.com/manzz671')" class="btn-neon ghost">Developer</button>
             </div>
-            <div class="badges reveal">
-                <span>⚡ Powered by Cloudflare</span>
-                <span>📂 Hosted on GitHub</span>
-            </div>
+            <p class="copyright">© 2025 Clash Of Centranif</p>
         </footer>
     </main>
 
