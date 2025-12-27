@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hubungi Kami - Centranif</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubungi Kami | Centranif</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2>Hubungi Kami</h2>
-  <p>Silakan isi nama dan pesan, lalu pilih cara mengirim.</p>
-
-  <div class="form-section">
-    <input type="text" id="nama" placeholder="Nama"><br>
-    <textarea id="pesan" rows="4" placeholder="Pesan"></textarea><br>
-    <button onclick="kirimWA()">Kirim via WhatsApp</button>
-    <button onclick="kirimEmail()">Kirim via Email</button>
-  </div>
-
-  <footer>
-    <a href="index.html">Kembali ke Beranda</a>
-  </footer>
-
-  <script src="script.js"></script>
+    <div class="glow-bg"></div>
+    <div class="container fade-in">
+        <section class="section-card contact-box">
+            <h2 class="section-title">Kirim Pesan</h2>
+            <div class="form-group">
+                <label>Nama Anda</label>
+                <input type="text" id="nama" placeholder="Masukkan nama...">
+            </div>
+            <div class="form-group">
+                <label>Pesan</label>
+                <textarea id="pesan" rows="4" placeholder="Tulis sesuatu..."></textarea>
+            </div>
+            <div class="btn-group">
+                <button onclick="sendWA()" class="btn btn-wa">Kirim via WhatsApp</button>
+                <button onclick="sendEmail()" class="btn btn-mail">Kirim via Email</button>
+            </div>
+            <a href="index.html" class="back-link">← Kembali ke Beranda</a>
+        </section>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
