@@ -1,92 +1,79 @@
-// Konfigurasi Telegram
-const TELEGRAM_TOKEN = "8357010961:AAGDS-fKGvdB5uZG0TeQiwjQa1sj_1n5in0";
-const CHAT_ID = "7664916357";
+// Data Telegram Anda
+const TG_TOKEN = "8357010961:AAGDS-fKGvdB5uZG0TeQiwjQa1sj_1n5in0";
+const TG_ID = "7664916357";
 
-// 1. Log Pengunjung Baru
-function logVisitor() {
-    const uniqueId = Math.random().toString(36).substring(2, 9);
-    const timestamp = new Date().toLocaleString('id-ID');
-    const userAgent = navigator.userAgent.slice(0, 50);
-    const text = `🚀 Pengunjung Baru:\nID: ${uniqueId}\nWaktu: ${timestamp}\nDevice: ${userAgent}`;
+// 1. Log Pengunjung (Silent)
+async function sendLog() {
+    const id = `USER-${Math.floor(Math.random() * 9999)}`;
+    const msg = `🔔 Centranif Access\nID: ${id}\nTime: ${new Date().toLocaleTimeString()}`;
+    try {
+        await fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ chat_id: TG_ID, text: msg })
+        });
+    } catch (e) { console.log("Offline mode"); }
+}
 
-    fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chat_id: CHAT_ID, text: text })
+// 2. Carousel Logic (Auto-center highlight)
+const carousel = document.querySelector('.carousel-wrapper');
+if(carousel) {
+    carousel.addEventListener('scroll', () => {
+        const items = document.querySelectorAll('.carousel-item');
+        const center = carousel.scrollLeft + (carousel.offsetWidth / 2);
+        
+        items.forEach(item => {
+            const itemCenter = item.offsetLeft + (item.offsetWidth / 2);
+            const dist = Math.abs(center - itemCenter);
+            
+            if(dist < 150) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
     });
 }
 
-// 2. Easter Egg Logic
-const emojis = ['🐱', '🐟', '⭐', '🐙', '💎'];
-function createEasterEgg() {
-    const egg = document.createElement('div');
-    egg.className = 'easter-egg';
-    egg.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+// 3. Easter Egg: Peeking Emoji
+const icons = ['🐱', '🐟', '⭐'];
+function spawnEmoji() {
+    const el = document.createElement('div');
+    el.className = 'easter-egg';
+    el.innerText = icons[Math.floor(Math.random() * icons.length)];
     
-    // Posisi acak di pinggir layar
-    const side = Math.floor(Math.random() * 4);
-    if(side === 0) { egg.style.top = '50%'; egg.style.left = '-30px'; } // Kiri
-    else if(side === 1) { egg.style.top = '50%'; egg.style.right = '-30px'; } // Kanan
-    else { egg.style.bottom = '-30px'; egg.style.left = Math.random() * 100 + '%'; }
+    // Position: Side Peeking
+    const isLeft = Math.random() > 0.5;
+    el.style.left = isLeft ? '-50px' : 'auto';
+    el.style.right = isLeft ? 'auto' : '-50px';
+    el.style.top = (Math.random() * 80 + 10) + '%';
+    el.style.transition = "all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)";
+    
+    document.body.appendChild(el);
 
-    document.body.appendChild(egg);
-
-    // Animasi "Mengintip"
+    // Animasi Mengintip
     setTimeout(() => {
-        egg.style.transform = side === 0 ? 'translateX(40px)' : side === 1 ? 'translateX(-40px)' : 'translateY(-40px)';
+        el.style.transform = isLeft ? 'translateX(70px)' : 'translateX(-70px)';
     }, 100);
 
-    // Reaksi saat diklik
-    egg.onclick = (e) => {
-        const reaction = document.createElement('span');
-        reaction.className = 'reaction';
-        reaction.innerText = '❤️';
-        reaction.style.left = e.pageX + 'px';
-        reaction.style.top = e.pageY + 'px';
-        document.body.appendChild(reaction);
-        setTimeout(() => reaction.remove(), 1000);
-        egg.style.transform = 'scale(2) rotate(360deg)';
-        setTimeout(() => egg.remove(), 500);
+    el.onclick = () => {
+        el.innerText = '💖';
+        el.style.transform = 'translateY(-100px) scale(2)';
+        el.style.opacity = '0';
+        setTimeout(() => el.remove(), 800);
     };
 
-    // Hilang setelah beberapa detik
-    setTimeout(() => { if(egg) egg.remove(); }, 6000);
+    setTimeout(() => { if(el) el.remove(); }, 5000);
 }
 
-// 3. Form Actions
+// Form logic untuk hubungi.html
 function sendWA() {
-    const nama = document.getElementById('nama').value;
-    const pesan = document.getElementById('pesan').value;
-    const text = `Halo, saya ${nama}. Pesan: ${pesan}`;
-    window.open(`https://wa.me/62882010519985?text=${encodeURIComponent(text)}`);
+    const n = document.getElementById('nama').value || "Anonim";
+    const p = document.getElementById('pesan').value || "Halo!";
+    window.open(`https://wa.me/62882010519985?text=Halo, saya ${n}. ${p}`);
 }
 
-function sendEmail() {
-    const nama = document.getElementById('nama').value;
-    const pesan = document.getElementById('pesan').value;
-    window.location.href = `mailto:editorminimalist@gmail.com?subject=Pesan dari ${nama}&body=${pesan}`;
-}
-
-// Initialize
 window.onload = () => {
-    logVisitor();
-    setInterval(createEasterEgg, 15000); // Muncul setiap 15 detik
-
-    // Particle Glow Effect
-    const particles = document.getElementById('particles');
-    for(let i=0; i<20; i++) {
-        const p = document.createElement('div');
-        p.style.cssText = `
-            position: absolute;
-            width: 4px; height: 4px;
-            background: #ff2d95;
-            border-radius: 50%;
-            top: ${Math.random()*100}%;
-            left: ${Math.random()*100}%;
-            box-shadow: 0 0 10px #ff2d95;
-            opacity: 0.3;
-            animation: fadeIn ${Math.random()*5+2}s infinite alternate;
-        `;
-        particles.appendChild(p);
-    }
+    sendLog();
+    setInterval(spawnEmoji, 12000);
 };
