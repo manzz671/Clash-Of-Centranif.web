@@ -247,7 +247,7 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 function sendWA(){
   const n = (document.getElementById('nama') || {}).value || 'Anonim';
   const p = (document.getElementById('pesan') || {}).value || '';
-  const text = encodeURIComponent(`Halo Centranif! Saya ${n}.\n\n${p}`);
+  const text = encodeURIComponent(`!!New_Message!! \nSaya: ${n}.\n\nPesan saya: ${p}`);
   window.open(`https://wa.me/62882010519985?text=${text}`, '_blank');
 }
 function sendEmail(){
