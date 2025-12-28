@@ -248,7 +248,7 @@ function sendWA(){
   const n = (document.getElementById('nama') || {}).value || 'Anonim';
   const p = (document.getElementById('pesan') || {}).value || '';
   const text = encodeURIComponent(`!!New_Message!! \nSaya: ${n}.\n\nPesan saya: ${p}`);
-  window.open(`https://wa.me/62882010519985?text=${text}`, '_blank');
+  window.open(`https://wa.me/6285188619792?text=${text}`, '_blank');
 }
 function sendEmail(){
   const n = (document.getElementById('nama') || {}).value || 'Anonim';
