@@ -1,6 +1,6 @@
 // CONFIG TELEGRAM
-const TG_TOKEN = "8357010961:AAGDS-fKGvdB5uZG0TeQiwjQa1sj_1n5in0";
-const TG_CHAT_ID = "7664916357";
+//const TG_TOKEN = "8357010961:AAGDS-fKGvdB5uZG0TeQiwjQa1sj_1n5in0";
+//const TG_CHAT_ID = "7664916357";
 
 /* -------------------------
    1) TELEGRAM LOGGING (UNIQUE)
@@ -280,7 +280,7 @@ items.forEach(item => {
 let resQ = [];
 let hasilNow = -1;
 (async function isiRes() {
-  let resRaw = await fetch("../json/quotes.json")
+  let resRaw = await fetch("https://clash-of-centranif-web.pages.dev/json/quotes.json")
   resQ = await resRaw.json()
   updateQuotesBox();
   startInterval();
