@@ -1,0 +1,109 @@
+body{
+  background-color: #71003f;
+}
+/*animasi*/
+
+.animate {
+	opacity: 0;
+	transform: translateY(20px);
+	transition: .9s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.animate.active {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.container {
+  background-color: #3a001f;
+  margin: 2px auto;
+  padding: 2px;
+  border: 4px solid purple;
+  border-radius:20px;
+  width: 300px;
+  height: 475px;
+  justify-content: center;
+  align-items: center;
+}
+
+.div-title {
+  margin: 13px auto;
+  height: auto;
+  width: 150px;
+  color: white;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  border-bottom: 2px solid darkred;
+}
+
+fieldset {
+  height: 50px;
+  width: 250px;
+  border: 2px solid darkred;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  margin: 10px auto;
+}
+
+.input {
+  height: 30px;
+  width: 240px;
+  margin: 5px auto;
+  margin-top: 2px;
+  background-color: #51002b;
+  border: 2px solid darkred;
+  border-radius: 5px;
+  color: white;
+}
+
+input:focus {
+  height: 35px;
+  width: 245px;
+}
+
+#message {
+  height: 180px;
+}
+
+#message textarea {
+  height: 150px;
+  margin: 5px auto;
+  margin-top: 2px;
+  color: white;
+}
+
+#message textarea {
+  text-align: left;
+  vertical-align: top;
+}
+
+.sender-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px auto;
+  padding: 2px;
+  height: 40px;
+  width: 250px;
+  background-color: white;
+  border-radius: 15px;
+}
+
+#whatsapp {
+  background-color: #00bd1a;
+  color: black;
+}
+#whatsapp i {
+  margin-right: 5px;
+}
+
+
+#telegram {
+  background-color: #00b1f0;
+  color: black;
+}
+#telegram i {
+  margin-right: 5px;
+}
