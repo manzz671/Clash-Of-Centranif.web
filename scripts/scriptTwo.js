@@ -24,7 +24,8 @@ wa.addEventListener("click", async () => {
 
   let username = nama.value
   let content = msg.value
-  let message = `Hai, saya ${username.toString()}\n\nPesan saya: ${content}`
+  let message = `Hai, saya ${username}
+  Pesan saya: ${content}`
   let yes = await confirm("Yakin mau kirim lewat WhatsApp?")
   if (yes) {
     window.location.href = "https://wa.me/62882010519985?text=" + message;
